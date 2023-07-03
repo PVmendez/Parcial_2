@@ -5,12 +5,13 @@ export const productsController = {
   getProducts: (req: any, res: any) => {
     try {
       const result: Product[] = products.map(
-        ({ id, cost, name, stock, image }) => ({
+        ({ id, price, name, stock, image, description }) => ({
           id,
-          cost,
+          price,
           name,
           stock,
           image,
+          description
         })
       );
       res.json(result);
